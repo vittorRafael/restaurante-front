@@ -8,10 +8,10 @@ import Head from '../partials/Head';
 
 const Login = () => {
   return (
-    <MainContainer>
+    <MainContainer classes="bg-restaurant bg-cover">
       <Head title="Login" description="Essa página é a Login" />
-      <section>
-        <div>
+      <section className="grid md:grid-cols-2 gap-8 grid-cols-1">
+        <div className="col-span-1 md:col-start-2 rounded-lg bg-white dark:bg-gray-900 p-8 animeLeft col-start-1">
           <Routes>
             <Route path="/" element={<LoginForm />} />
             <Route path="perdeu" element={<LoginPasswordLost />} />

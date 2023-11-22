@@ -6,7 +6,11 @@ export default {
     fontFamily: {
       roboto: ['Roboto', 'sans-serif'],
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        restaurant: "url('./src/Assets/bg.jpg')",
+      },
+    },
   },
   plugins: [],
 };

@@ -12,3 +12,16 @@
     transform: initial;
   }
 }
+
+.animeLeft{
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: animeLeft .7s forwards;
+}
+
+@keyframes animeLeft {
+  to {
+    opacity: .9;
+    transform: initial;
+  }
+}
