@@ -8,7 +8,7 @@ export default {
     },
     extend: {
       backgroundImage: {
-        restaurant: "url('./src/Assets/bg.jpg')",
+        restaurant: "url('/src/Assets/bg.jpg')",
       },
     },
   },

@@ -1,5 +1,5 @@
 import React from 'react';
-import Input from '../Widgets/Form/Input';
+import Input from '../Widgets/Form/InputText';
 import Button from '../Widgets/Form/Button';
 import useForm from '../../Hooks/useForm';
 import { Link } from 'react-router-dom';
@@ -10,8 +10,6 @@ const LoginForm = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log('Olá');
-    console.log(email.value, password.value);
   }
   return (
     <article className="flex flex-col gap-10">
