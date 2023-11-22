@@ -4,6 +4,7 @@ import Footer from './Components/partials/Footer';
 import Home from './Components/Pages/Home';
 import Login from './Components/Pages/Login';
 import { UserStorage } from './Context/UserContext';
+import './App.css';
 
 function App() {
   return (
