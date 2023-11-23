@@ -15,8 +15,14 @@ export const UserStorage = ({ children }) => {
     localStorage.setItem('theme', theme);
   }, [theme]);
 
+  const user = {
+    nome: 'Rafael',
+    sobrenome: 'Sales',
+    funcao: 'CEO',
+  };
+
   return (
-    <UserContext.Provider value={{ theme, setTheme }}>
+    <UserContext.Provider value={{ theme, setTheme, user }}>
       {children}
     </UserContext.Provider>
   );

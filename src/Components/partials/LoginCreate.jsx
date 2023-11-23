@@ -1,9 +1,12 @@
 import React from 'react';
 import Input from '../Widgets/Form/InputText';
 import Button from '../Widgets/Form/Button';
-import useForm from '../../Hooks/useForm';
+import useForm from '../../Hooks/useFormValidate';
+import useFormNoValidate from '../../Hooks/useFormNoValidate';
 import { Link } from 'react-router-dom';
 import Select from '../Widgets/Form/Select';
+import Title from '../Widgets/Title';
+import Head from '../partials/Head';
 
 const generos = [
   { id: 'Masculino', funcao: 'Masculino' },
@@ -12,46 +15,85 @@ const generos = [
   { id: 'Prefiro não informar', funcao: 'Prefiro não informar' },
 ];
 
+const cargos = [
+  { id: '1', funcao: 'Garçom' },
+  { id: '2', funcao: 'Recepcionista' },
+  { id: '3', funcao: 'Balconista' },
+  { id: '4', funcao: 'Cozinheiro' },
+];
+
 const LoginCreate = () => {
   const nome = useForm('');
-  const sobrenome = useForm('');
+  const sobrenome = useFormNoValidate('');
   const email = useForm('email');
   const senha = useForm('');
-  const sexo = useForm('');
-  const salario = useForm('salario');
-  const telefone = useForm('');
+  const confirmSenha = useForm('');
+  const sexo = useFormNoValidate('');
+  const cargo_id = useForm('');
+  const salario = useFormNoValidate('salario');
+  const telefone = useFormNoValidate('');
+  const cpf = useForm('');
   const data_nascimento = useForm('');
+  const data_cadastro = useFormNoValidate('');
   const [admin, setAdmin] = React.useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(admin);
+    if (
+      nome.validate() ||
+      email.validate() ||
+      senha.validate() ||
+      confirmSenha.validate() ||
+      cargo_id.validate() ||
+      cpf.validate() ||
+      data_nascimento.validate()
+    ) {
+      //código para cadastrar aqui
+      console.log('cadastrou');
+      return;
+    }
+  }
+
+  function validatePass() {
+    if (confirmSenha.value.length === 0) {
+      confirmSenha.setError('Preencha um valor.');
+      return false;
+    } else if (confirmSenha.value !== senha.value) {
+      confirmSenha.setError('As senhas não estão iguais.');
+      senha.setError('As senhas não estão iguais.');
+      return false;
+    } else {
+      confirmSenha.setError(null);
+      return true;
+    }
   }
 
   return (
     <article className="flex flex-col gap-10">
-      <h1 className="font-roboto font-bold text-3xl text-slate-900 dark:text-white">
-        Cadastrar novo funcionário
-      </h1>
+      <Head
+        title="Cadastrar"
+        description="Essa página é a de cadastrar novo funcionário no sistema"
+      />
+      <Title title="Cadastrar Novo Funcionário" />
       <form onSubmit={handleSubmit}>
         <div className="grid gap-6 mb-6 md:grid-cols-2">
           <Input
             type="text"
             name="nome"
             label="Nome"
-            placeholder="Digite seu nome"
+            placeholder="José Paulo"
             {...nome}
           />
           <Input
             type="text"
             name="sobrenome"
             label="Sobrenome"
-            placeholder="Digite seu sobrenome"
+            placeholder="Santos"
             {...sobrenome}
           />
           <Select
             name="genero"
-            label="Selecione seu genêro"
+            label="Selecione Seu Genêro"
             opts={generos}
             {...sexo}
           />
@@ -59,22 +101,40 @@ const LoginCreate = () => {
             type="text"
             name="salario"
             label="Salario"
-            placeholder="Digite seu salario"
+            placeholder="R$ 2.500,00"
             {...salario}
           />
           <Input
             type="text"
             name="telefone"
             label="Telefone"
-            placeholder="Digite seu telefone"
+            placeholder="(99) 9 9999-9999"
             {...telefone}
+          />
+          <Input
+            type="text"
+            name="cpf"
+            label="Cpf"
+            placeholder="000.000.000-00"
+            {...cpf}
           />
           <Input
             type="date"
             name="data_nascimento"
             label="Data de Nascimento"
-            placeholder="Digite sua data de nascimento"
             {...data_nascimento}
+          />
+          <Input
+            type="date"
+            name="data_cadastro"
+            label="Data de Admissão"
+            {...data_cadastro}
+          />
+          <Select
+            name="cargo_id"
+            label="Selecione Seu Cargo"
+            opts={cargos}
+            {...cargo_id}
           />
         </div>
         <div className="mb-6 flex flex-col gap-4">
@@ -86,11 +146,19 @@ const LoginCreate = () => {
             {...email}
           />
           <Input
-            type="senha"
+            type="password"
             name="senha"
             label="Senha"
             placeholder="*************"
             {...senha}
+          />
+          <Input
+            type="password"
+            name="confirmSenha"
+            label="Confirmar Senha"
+            placeholder="*************"
+            {...confirmSenha}
+            onBlur={validatePass}
           />
           <div className="flex gap-3 items-center">
             <input
@@ -101,7 +169,7 @@ const LoginCreate = () => {
             />
             <label
               htmlFor="admin"
-              className="block text-sm font-medium text-gray-900 dark:text-white"
+              className="block text-sm font-medium text-gray-900 dark:text-gray-50"
             >
               É admin?
             </label>
@@ -114,11 +182,7 @@ const LoginCreate = () => {
           >
             Esqueceu a senha?
           </Link>
-          <Button
-            type="submit"
-            color="green"
-            disabled={email.error || senha.error ? true : false}
-          >
+          <Button type="submit" color="green">
             Entrar
           </Button>
         </div>

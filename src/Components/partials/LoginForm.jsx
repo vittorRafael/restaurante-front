@@ -1,8 +1,10 @@
 import React from 'react';
 import Input from '../Widgets/Form/InputText';
 import Button from '../Widgets/Form/Button';
-import useForm from '../../Hooks/useForm';
+import useForm from '../../Hooks/useFormValidate';
 import { Link } from 'react-router-dom';
+import Title from '../Widgets/Title';
+import Head from './Head';
 
 const LoginForm = () => {
   const email = useForm('email');
@@ -13,9 +15,8 @@ const LoginForm = () => {
   }
   return (
     <article className="flex flex-col gap-10">
-      <h1 className="font-roboto font-bold text-3xl text-slate-900 dark:text-white">
-        Acesse sua conta
-      </h1>
+      <Head title="Login" description="Essa página é a Login" />
+      <Title title="Acesse sua Conta" />
       <form onSubmit={handleSubmit}>
         {/* <div className="grid gap-6 mb-6 md:grid-cols-2">
           <Input

@@ -18,7 +18,7 @@ const Header = () => {
   }
 
   return (
-    <header className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800 transition-colors duration-700">
+    <header className="bg-gray-50 border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800 transition-colors duration-700">
       <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
         <Link
           to="/"
@@ -30,7 +30,7 @@ const Header = () => {
             alt={nameSis}
             aria-description="Logo da empresa"
           />
-          <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+          <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-gray-50">
             {`${nameSis} ${import.meta.env.VITE_SIS_EMP}`}
           </span>
         </Link>
@@ -64,7 +64,7 @@ const Header = () => {
             <li>
               <Link
                 to="/"
-                className="block py-2 pr-4 pl-3 text-gray-600 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-gray-900 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
+                className="block py-2 pr-4 pl-3 text-gray-600 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-gray-900 lg:p-0 dark:text-gray-400 lg:dark:hover:text-gray-50 dark:hover:bg-gray-700 dark:hover:text-gray-50 lg:dark:hover:bg-transparent dark:border-gray-700"
                 onClick={() => setToggleMenu(!toggleMenu)}
               >
                 Home
@@ -73,7 +73,7 @@ const Header = () => {
             <li>
               <Link
                 to="/meuperfil"
-                className="block py-2 pr-4 pl-3 text-gray-600 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-gray-900 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700 lg:whitespace-nowrap"
+                className="block py-2 pr-4 pl-3 text-gray-600 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-gray-900 lg:p-0 dark:text-gray-400 lg:dark:hover:text-gray-50 dark:hover:bg-gray-700 dark:hover:text-gray-50 lg:dark:hover:bg-transparent dark:border-gray-700 lg:whitespace-nowrap"
                 onClick={() => setToggleMenu(!toggleMenu)}
               >
                 Minha Conta
@@ -82,7 +82,7 @@ const Header = () => {
             <li>
               <Link
                 to="/login"
-                className="block py-2 pr-4 pl-3 text-gray-600 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-gray-900 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700 lg:whitespace-nowrap"
+                className="block py-2 pr-4 pl-3 text-gray-600 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-gray-900 lg:p-0 dark:text-gray-400 lg:dark:hover:text-gray-50 dark:hover:bg-gray-700 dark:hover:text-gray-50 lg:dark:hover:bg-transparent dark:border-gray-700 lg:whitespace-nowrap"
                 onClick={() => setToggleMenu(!toggleMenu)}
               >
                 Log in

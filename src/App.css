@@ -6,12 +6,6 @@
   animation: animeBottom .5s forwards;
 }
 
-@keyframes animeBottom {
-  to {
-    opacity: 1;
-    transform: initial;
-  }
-}
 
 .animeLeft{
   opacity: 0;
@@ -19,9 +13,30 @@
   animation: animeLeft .7s forwards;
 }
 
+.animeModal{
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: animeModal .7s forwards;
+}
+
+
 @keyframes animeLeft {
   to {
     opacity: .9;
+    transform: initial;
+  }
+}
+
+@keyframes animeBottom {
+  to {
+    opacity: 1;
+    transform: initial;
+  }
+}
+
+@keyframes animeModal {
+  to {
+    opacity: .8;
     transform: initial;
   }
 }

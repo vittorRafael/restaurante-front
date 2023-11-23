@@ -11,7 +11,7 @@ const Button = ({ type, color, children, disabled }) => {
   return (
     <button
       type={type}
-      className={`disabled:opacity-50 focus:outline-none text-white focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 w-40 ${colorsClass}`}
+      className={`disabled:opacity-50 focus:outline-none text-gray-50 focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 w-40 ${colorsClass}`}
       disabled={disabled}
     >
       {children}
