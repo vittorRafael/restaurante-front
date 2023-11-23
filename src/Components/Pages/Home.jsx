@@ -32,10 +32,10 @@ const Home = () => {
             <Card title="Produtos" to="/produtos" />
           </li>
           <li>
-            <Card title="Perfil" to="/perfil" />
+            <Card title="Pedidos" to="/pedidos" />
           </li>
           <li>
-            <Card title="Pedidos" to="/pedidos" />
+            <Card title="Perfil" to="/perfil" />
           </li>
         </ul>
         <Subtitle title="Financeiro" />
