@@ -7,6 +7,7 @@ import Card from '../Widgets/Card';
 import BoxMoney from '../Widgets/BoxMoney';
 import Subtitle from '../Widgets/Subtitle';
 import Modal from '../Widgets/Modal';
+import Button from '../Widgets/Form/Button';
 
 const Home = () => {
   const { user } = React.useContext(UserContext);
@@ -46,8 +47,32 @@ const Home = () => {
           handleClick={setIsActive}
           isActive={isActive}
         />
+        <Subtitle title="Funcionário Destaque" />
       </section>
-      <Modal isActive={isActive} handleClick={setIsActive} />
+      <Modal
+        isActive={isActive}
+        handleClick={setIsActive}
+        title="Visão Caixa"
+        buttons={[
+          <Button
+            type="button"
+            disabled={false}
+            onClick={() => setIsActive(!isActive)}
+            key={1}
+          >
+            Ok, Entendi.
+          </Button>,
+        ]}
+      >
+        <p className="dark:text-white text-slate-900 font-roboto font-medium text-lg">
+          A soma das suas entradas e sáidas realizadas no mês contando somente
+          as transações já realizadas.
+        </p>
+        <p className="dark:text-white text-slate-900 font-roboto font-medium text-lg">
+          Nesta visão não contabilizamos transações que ainda não entraram ou
+          saíram de suas contas
+        </p>
+      </Modal>
     </MainContainer>
   );
 };

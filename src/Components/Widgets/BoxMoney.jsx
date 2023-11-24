@@ -6,7 +6,7 @@ const BoxMoney = ({ entry, exit, maxValue, handleClick, isActive }) => {
   const pctExit = Math.round((100 * exit) / maxValue);
 
   return (
-    <article className="w-full md:w-1/2 border-2 dark:border-white border-slate-900 rounded-md p-8 flex flex-col gap-4">
+    <article className="w-full border-2 dark:border-white border-slate-900 rounded-md p-8 flex flex-col gap-4">
       <div className="flex pb-2 border-b-2 border-slate-400 justify-between items-center">
         <h4 className="text-lg font-roboto font-medium dark:text-gray-200 text-slate-900">
           Resultado{' - '}
@@ -48,17 +48,21 @@ const BoxMoney = ({ entry, exit, maxValue, handleClick, isActive }) => {
             </span>
           </h4>
         </div>
-        <div className="col-span-1 md:col-span-2 lg:col-span-1 row-span-2 flex justify-center md:justify-end items-end text-white gap-4">
-          <div
-            style={{ height: `${pctEntry > 100 ? 100 : pctEntry}%` }}
-            className={`w-10 bg-green-600 cursor-pointer flex justify-center items-end ${`h-[${pctEntry}%]`}`}
-          ></div>
-          <p className="text-md font-roboto font-medium dark:text-gray-200 text-slate-900">{`${pctEntry}%`}</p>
-          <div
-            style={{ height: `${pctExit > 100 ? 100 : pctExit}%` }}
-            className={`w-10 bg-red-600 cursor-pointer flex justify-center items-end`}
-          ></div>
-          <p className="text-md font-roboto font-medium dark:text-gray-200 text-slate-900">{`${pctExit}%`}</p>
+        <div className="col-span-1 md:col-span-2 lg:col-span-1 row-span-2 flex justify-evenly items-end text-white gap-4">
+          <div className="h-full">
+            <div
+              style={{ height: `${pctEntry > 100 ? 100 : pctEntry}%` }}
+              className={`w-10 bg-green-600 cursor-pointer flex justify-center items-end ${`h-[${pctEntry}%]`}`}
+            ></div>
+            <p className="text-md font-roboto font-medium dark:text-gray-200 text-slate-900">{`${pctEntry}%`}</p>
+          </div>
+          <div className="h-full">
+            <div
+              style={{ height: `${pctExit > 100 ? 100 : pctExit}%` }}
+              className={`w-10 bg-red-600 cursor-pointer flex justify-center items-end`}
+            ></div>
+            <p className="text-md font-roboto font-medium dark:text-gray-200 text-slate-900">{`${pctExit}%`}</p>
+          </div>
         </div>
       </div>
     </article>
