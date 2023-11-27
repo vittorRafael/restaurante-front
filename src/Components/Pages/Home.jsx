@@ -8,6 +8,7 @@ import BoxMoney from '../Widgets/BoxMoney';
 import Subtitle from '../Widgets/Subtitle';
 import Modal from '../Widgets/Modal';
 import Button from '../Widgets/Form/Button';
+import Emphasis from '../Widgets/Emphasis';
 
 const Home = () => {
   const { user } = React.useContext(UserContext);
@@ -48,6 +49,7 @@ const Home = () => {
           modalInfo={modalInfo}
         />
         <Subtitle title="Funcionário Destaque" />
+        <Emphasis />
       </section>
       <Modal
         isActive={modalInfo}

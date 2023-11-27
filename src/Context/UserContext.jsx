@@ -19,6 +19,7 @@ export const UserStorage = ({ children }) => {
     nome: 'Rafael',
     sobrenome: 'Sales',
     funcao: 'CEO',
+    img: 'https://f005.backblazeb2.com/file/restaurante-sales-development/perfil.jpg',
   };
 
   return (
