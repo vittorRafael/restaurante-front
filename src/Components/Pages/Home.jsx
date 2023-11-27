@@ -11,7 +11,7 @@ import Button from '../Widgets/Form/Button';
 
 const Home = () => {
   const { user } = React.useContext(UserContext);
-  const [isActive, setIsActive] = React.useState(true);
+  const [modalInfo, setModalInfo] = React.useState(false);
 
   const entry = 2200;
   const exit = 2500;
@@ -44,20 +44,20 @@ const Home = () => {
           entry={entry}
           exit={exit}
           maxValue={maxValue}
-          handleClick={setIsActive}
-          isActive={isActive}
+          handleClick={setModalInfo}
+          modalInfo={modalInfo}
         />
         <Subtitle title="Funcionário Destaque" />
       </section>
       <Modal
-        isActive={isActive}
-        handleClick={setIsActive}
+        isActive={modalInfo}
+        handleClick={setModalInfo}
         title="Visão Caixa"
         buttons={[
           <Button
             type="button"
             disabled={false}
-            onClick={() => setIsActive(!isActive)}
+            onClick={() => setModalInfo(!modalInfo)}
             key={1}
           >
             Ok, Entendi.

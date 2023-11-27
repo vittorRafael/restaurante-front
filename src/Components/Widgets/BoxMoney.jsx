@@ -9,13 +9,12 @@ const BoxMoney = ({ entry, exit, maxValue, handleClick, isActive }) => {
     <article className="w-full border-2 dark:border-white border-slate-900 rounded-md p-8 flex flex-col gap-4">
       <div className="flex pb-2 border-b-2 border-slate-400 justify-between items-center">
         <h4 className="text-lg font-roboto font-medium dark:text-gray-200 text-slate-900">
-          Resultado{' - '}
           <span
             className={`font-bold ${
               entry > exit ? 'text-green-600' : 'text-red-600'
             }`}
           >
-            (Nov/23)
+            Nov/23
           </span>
         </h4>
         <FaInfo
