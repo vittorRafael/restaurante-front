@@ -19,7 +19,14 @@ export const UserStorage = ({ children }) => {
     nome: 'Rafael',
     sobrenome: 'Sales',
     funcao: 'CEO',
+    email: 'rafael@gmail.com',
     img: 'https://f005.backblazeb2.com/file/restaurante-sales-development/perfil.jpg',
+    genero: 'Masculino',
+    salario: 1900,
+    telefone: '5585994344661',
+    cpf: '622.632.643-83',
+    data_nasc: '2002/05/25',
+    data_admiss: '2023/10/16',
   };
 
   return (

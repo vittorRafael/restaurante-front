@@ -1,5 +1,6 @@
 import React from 'react';
 import Input from '../Widgets/Form/InputText';
+import PhotoProfile from '../Widgets/Form/photoProfile';
 import Button from '../Widgets/Form/Button';
 import useForm from '../../Hooks/useFormValidate';
 import useFormNoValidate from '../../Hooks/useFormNoValidate';
@@ -137,27 +138,7 @@ const LoginCreate = () => {
             opts={cargos}
             {...cargo_id}
           />
-          <div>
-            <label
-              htmlFor="file"
-              className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-50"
-            >
-              Escolher Imagem
-            </label>
-            <label
-              className={`cursor-pointer text-center bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-50 dark:focus:ring-blue-500 dark:focus:border-blue-500`}
-            >
-              <input
-                className="hidden "
-                type="file"
-                name="file"
-                id="file"
-                accept="image/png, image/jpeg, image/jpg"
-                onChange={(e) => setFile(e.target.files[0])}
-              />
-              {file ? file.name : 'Selecione uma imagem'}
-            </label>
-          </div>
+          <PhotoProfile image={file} setImage={setFile} />
         </div>
         <div className="mb-6 flex flex-col gap-4">
           <Input
