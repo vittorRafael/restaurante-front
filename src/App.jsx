@@ -6,6 +6,7 @@ import Login from './Components/Pages/Login';
 import Profile from './Components/Pages/Profile';
 import { UserStorage } from './Context/UserContext';
 import './App.css';
+import Requests from './Components/Pages/Requests';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login/*" element={<Login />} />
           <Route path="/perfil" element={<Profile />} />
+          <Route path="/pedidos/*" element={<Requests />} />
         </Routes>
         <Footer />
       </UserStorage>

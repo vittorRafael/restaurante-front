@@ -1,10 +1,10 @@
 import React from 'react';
 import MainContainer from '../Layouts/MainContainer';
 import { Route, Routes } from 'react-router-dom';
-import LoginForm from '../partials/LoginForm';
-import LoginPasswordLost from '../partials/LoginPasswordLost';
-import LoginPasswordReset from '../partials/LoginPasswordReset';
-import LoginCreate from '../partials/LoginCreate';
+import LoginForm from '../partials/Login/LoginForm';
+import LoginPasswordLost from '../partials/Login/LoginPasswordLost';
+import LoginPasswordReset from '../partials/Login/LoginPasswordReset';
+import LoginCreate from '../partials/Login/LoginCreate';
 
 const Login = () => {
   return (

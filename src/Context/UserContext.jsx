@@ -27,6 +27,7 @@ export const UserStorage = ({ children }) => {
     cpf: '622.632.643-83',
     data_nasc: '2002/05/25',
     data_admiss: '2023/10/16',
+    cargo_id: 5,
   };
 
   return (

@@ -1,10 +1,10 @@
 import React from 'react';
-import Input from '../Widgets/Form/InputText';
-import Button from '../Widgets/Form/Button';
-import useForm from '../../Hooks/useFormValidate';
+import Input from '../../Widgets/Form/InputText';
+import Button from '../../Widgets/Form/Button';
+import useForm from '../../../Hooks/useFormValidate';
 import { Link } from 'react-router-dom';
-import Title from '../Widgets/Title';
-import Head from './Head';
+import Title from '../../Widgets/Title';
+import Head from '../Head';
 
 const LoginForm = () => {
   const email = useForm('email');

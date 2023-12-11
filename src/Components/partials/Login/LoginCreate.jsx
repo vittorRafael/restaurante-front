@@ -1,13 +1,13 @@
 import React from 'react';
-import Input from '../Widgets/Form/InputText';
-import PhotoProfile from '../Widgets/Form/photoProfile';
-import Button from '../Widgets/Form/Button';
-import useForm from '../../Hooks/useFormValidate';
-import useFormNoValidate from '../../Hooks/useFormNoValidate';
+import Input from '../../Widgets/Form/InputText';
+import PhotoProfile from '../../Widgets/Form/photoProfile';
+import Button from '../../Widgets/Form/Button';
+import useForm from '../../../Hooks/useFormValidate';
+import useFormNoValidate from '../../../Hooks/useFormNoValidate';
 import { Link } from 'react-router-dom';
-import Select from '../Widgets/Form/Select';
-import Title from '../Widgets/Title';
-import Head from '../partials/Head';
+import Select from '../../Widgets/Form/Select';
+import Title from '../../Widgets/Title';
+import Head from '../Head';
 
 const generos = [
   { id: 'Masculino', funcao: 'Masculino' },

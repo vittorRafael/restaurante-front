@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../../Assets/Logo.png';
 import { UserContext } from '../../Context/UserContext';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa6';
 
 const Header = () => {
@@ -20,7 +20,7 @@ const Header = () => {
   return (
     <header className="bg-gray-50 border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800 transition-colors duration-700">
       <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-        <Link
+        <NavLink
           to="/"
           className="flex items-center hover:scale-105 transition-all duration-300"
         >
@@ -33,7 +33,7 @@ const Header = () => {
           <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-gray-50">
             {`${nameSis} ${import.meta.env.VITE_SIS_EMP}`}
           </span>
-        </Link>
+        </NavLink>
         <div className="flex items-center lg:order-2 gap-2">
           <label className="flex cursor-pointer">
             <input
@@ -62,31 +62,58 @@ const Header = () => {
         >
           <ul className="flex flex-col items-center mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 gap-3 [&>*]:w-full">
             <li>
-              <Link
-                to="/"
-                className="block py-2 pr-4 pl-3 text-gray-600 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-gray-900 lg:p-0 dark:text-gray-400 lg:dark:hover:text-gray-50 dark:hover:bg-gray-700 dark:hover:text-gray-50 lg:dark:hover:bg-transparent dark:border-gray-700"
-                onClick={() => setToggleMenu(!toggleMenu)}
-              >
-                Home
-              </Link>
+              <NavLink to="/" onClick={() => setToggleMenu(!toggleMenu)}>
+                {(element) => (
+                  console.log(element.isActive),
+                  (
+                    <span
+                      className={`block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-gray-900 lg:p-0  lg:dark:hover:text-gray-50 dark:hover:bg-gray-700 dark:hover:text-gray-50 lg:dark:hover:bg-transparent dark:border-gray-700 lg:whitespace-nowrap ${
+                        element.isActive
+                          ? 'bg-gray-50 bg-transparent text-gray-900 dark:text-gray-50'
+                          : 'text-gray-600 dark:text-gray-400'
+                      }`}
+                    >
+                      Home
+                    </span>
+                  )
+                )}
+              </NavLink>
             </li>
             <li>
-              <Link
-                to="/perfil"
-                className="block py-2 pr-4 pl-3 text-gray-600 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-gray-900 lg:p-0 dark:text-gray-400 lg:dark:hover:text-gray-50 dark:hover:bg-gray-700 dark:hover:text-gray-50 lg:dark:hover:bg-transparent dark:border-gray-700 lg:whitespace-nowrap"
-                onClick={() => setToggleMenu(!toggleMenu)}
-              >
-                Minha Conta
-              </Link>
+              <NavLink to="/perfil" onClick={() => setToggleMenu(!toggleMenu)}>
+                {(element) => (
+                  console.log(element.isActive),
+                  (
+                    <span
+                      className={`block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-gray-900 lg:p-0  lg:dark:hover:text-gray-50 dark:hover:bg-gray-700 dark:hover:text-gray-50 lg:dark:hover:bg-transparent dark:border-gray-700 lg:whitespace-nowrap ${
+                        element.isActive
+                          ? 'bg-gray-50 bg-transparent text-gray-900 dark:text-gray-50'
+                          : 'text-gray-600 dark:text-gray-400'
+                      }`}
+                    >
+                      Minha Conta
+                    </span>
+                  )
+                )}
+              </NavLink>
             </li>
             <li>
-              <Link
-                to="/login"
-                className="block py-2 pr-4 pl-3 text-gray-600 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-gray-900 lg:p-0 dark:text-gray-400 lg:dark:hover:text-gray-50 dark:hover:bg-gray-700 dark:hover:text-gray-50 lg:dark:hover:bg-transparent dark:border-gray-700 lg:whitespace-nowrap"
-                onClick={() => setToggleMenu(!toggleMenu)}
-              >
-                Log in
-              </Link>
+              <NavLink to="/login" onClick={() => setToggleMenu(!toggleMenu)}>
+                {(element) => (
+                  console.log(element.isActive),
+                  (
+                    <span
+                      className={`block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-gray-900 lg:p-0  lg:dark:hover:text-gray-50 dark:hover:bg-gray-700 dark:hover:text-gray-50 lg:dark:hover:bg-transparent dark:border-gray-700 lg:whitespace-nowrap ${
+                        element.isActive
+                          ? 'bg-gray-50 bg-transparent text-gray-900 dark:text-gray-50'
+                          : 'text-gray-600 dark:text-gray-400'
+                      }`}
+                    >
+                      Log In
+                    </span>
+                  )
+                )}
+              </NavLink>
             </li>
           </ul>
         </nav>

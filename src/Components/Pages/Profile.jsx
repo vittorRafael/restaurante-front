@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 import MainContainer from '../Layouts/MainContainer';
 import Head from '../partials/Head';
@@ -5,12 +6,12 @@ import Title from '../Widgets/Title';
 import { UserContext } from '../../Context/UserContext';
 import userCapa from '../../Assets/bg.jpg';
 import userDefault from '../../Assets/default.jpg';
-import { FaPenToSquare, FaCamera } from 'react-icons/fa6';
+import { FaPenToSquare, FaCamera, FaRegTrashCan } from 'react-icons/fa6';
 import Button from '../Widgets/Form/Button';
 import Modal from '../Widgets/Modal';
 import PhotoProfile from '../Widgets/Form/photoProfile';
 import { format, compareAsc } from 'date-fns';
-import { Input } from 'postcss';
+import Input from '../Widgets/Form/InputText';
 import useForm from '../../Hooks/useFormValidate';
 import useFormNoValidate from '../../Hooks/useFormNoValidate';
 import Select from '../Widgets/Form/Select';
@@ -27,11 +28,13 @@ const cargos = [
   { id: '2', funcao: 'Recepcionista' },
   { id: '3', funcao: 'Balconista' },
   { id: '4', funcao: 'Cozinheiro' },
+  { id: '5', funcao: 'CEO' },
 ];
 
 const Profile = () => {
   const [modalPhoto, setModalPhoto] = React.useState(false);
   const [modalProfile, setModalProfile] = React.useState(false);
+  const [modalDeletar, setModalDeletar] = React.useState(false);
   const [image, setImage] = React.useState(null);
   const nome = useForm('');
   const sobrenome = useFormNoValidate('');
@@ -45,6 +48,19 @@ const Profile = () => {
   const data_cadastro = useFormNoValidate('');
 
   const { user } = React.useContext(UserContext);
+
+  React.useEffect(() => {
+    nome.setValue(user.nome);
+    sobrenome.setValue(user.sobrenome);
+    email.setValue(user.email);
+    sexo.setValue(user.sexo);
+    salario.setValue(user.salario);
+    telefone.setValue(user.telefone);
+    cpf.setValue(user.cpf);
+    cargo_id.setValue(user.cargo_id);
+    data_nascimento.setValue(user.data_nasc);
+    data_cadastro.setValue(user.data_admiss);
+  }, [user]);
 
   return (
     <div>
@@ -129,6 +145,18 @@ const Profile = () => {
               <p>{format(new Date(user.data_admiss), 'dd/MM/yyyy')}</p>
             </div>
           </div>
+        </section>
+        <section className="rounded-lg bg-gray-50 dark:bg-gray-900 p-8 animeLeft w-full flex flex-col gap-14">
+          <header className="flex justify-between items-center">
+            <Title title={`Deletar conta`} />
+            <button
+              onClick={() => setModalDeletar(!modalDeletar)}
+              className="px-10 py-2 hover:scale-105 cursor-pointer bg-red-700 rounded-md flex gap-2 items-center text-white font-roboto font-bold"
+            >
+              <FaRegTrashCan className="fill-white" size={30} />
+              Excluir minha conta
+            </button>
+          </header>
         </section>
         <Modal
           isActive={modalPhoto}
@@ -254,6 +282,39 @@ const Profile = () => {
               />
             </div>
           </form>
+        </Modal>
+        <Modal
+          isActive={modalDeletar}
+          handleClick={setModalDeletar}
+          title="Excluir conta"
+          buttons={[
+            <Button
+              type="button"
+              disabled={false}
+              onClick={() => setModalDeletar(!modalDeletar)}
+              key={1}
+              color="red"
+            >
+              Cancelar
+            </Button>,
+            <Button
+              type="button"
+              disabled={false}
+              onClick={() => console.log('conta excluida!')}
+              key={2}
+              color="green"
+            >
+              Confirmar
+            </Button>,
+          ]}
+        >
+          <p className="dark:text-white text-slate-900 font-roboto font-bold">
+            Deseja realmente excluir a sua conta?{' '}
+          </p>
+          <p className="dark:text-white text-slate-900 font-roboto font-medium">
+            Depois de confirmado todos os dados e tarefas relacionadas com essa
+            conta não vão estar disponíveis.
+          </p>
         </Modal>
       </MainContainer>
     </div>
