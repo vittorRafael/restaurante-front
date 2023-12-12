@@ -181,7 +181,7 @@ const LoginCreate = () => {
         <div className="w-full flex justify-between items-center">
           <Link
             to="/"
-            className="text-sky-800 dark:text-sky-500 underline hover:scale-105 hover:text-sky-950"
+            className="text-sky-800 dark:text-sky-500 underline md:hover:scale-105 md:hover:text-sky-950"
           >
             Esqueceu a senha?
           </Link>

@@ -74,7 +74,7 @@ const Profile = () => {
               className="h-[400px] object-cover rounded-t-lg"
             />
             <div className="px-8 flex gap-5">
-              <div className="relative cursor-pointer top-[-5rem] [&>img]:hover:opacity-80 [&>svg]:hover:opacity-100 [&>svg]:opacity-0">
+              <div className="relative cursor-pointer top-[-5rem] [&>img]:md:hover:opacity-80 [&>svg]:md:hover:opacity-100 [&>svg]:opacity-0">
                 {user.img ? (
                   <img
                     src={user.img}
@@ -107,7 +107,7 @@ const Profile = () => {
           <header className="flex justify-between items-center">
             <Title title={`Dados Usuário`} />
             <FaPenToSquare
-              className="dark:fill-white fill-slate-900 cursor-pointer hover:scale-105"
+              className="dark:fill-white fill-slate-900 cursor-pointer md:hover:scale-105"
               size={30}
               onClick={() => setModalProfile(!modalProfile)}
             />
@@ -132,7 +132,7 @@ const Profile = () => {
               <p>R$ {user.salario}</p>
               <a
                 href={`https://api.whatsapp.com/send?phone=${user.telefone}&text=Ol%C3%A1!`}
-                className="underline hover:scale-105"
+                className="underline md:hover:scale-105"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -151,7 +151,7 @@ const Profile = () => {
             <Title title={`Deletar conta`} />
             <button
               onClick={() => setModalDeletar(!modalDeletar)}
-              className="px-10 py-2 hover:scale-105 cursor-pointer bg-red-700 rounded-md flex gap-2 items-center text-white font-roboto font-bold"
+              className="px-10 py-2 md:hover:scale-105 cursor-pointer bg-red-700 rounded-md flex gap-2 items-center text-white font-roboto font-bold"
             >
               <FaRegTrashCan className="fill-white" size={30} />
               Excluir minha conta
@@ -210,7 +210,7 @@ const Profile = () => {
             </Button>,
           ]}
         >
-          <form>
+          <form className="max-h-64 overflow-y-auto scrollbar scrollbar-track-slate-50 scrollbar-thumb-slate-900 dark:scrollbar-track-transparent dark:scrollbar-thumb-slate-50 pr-4">
             <div className="grid gap-6 mb-6 md:grid-cols-2">
               <Input
                 type="text"

@@ -22,7 +22,7 @@ const Header = () => {
       <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
         <NavLink
           to="/"
-          className="flex items-center hover:scale-105 transition-all duration-300"
+          className="flex items-center md:hover:scale-105 transition-all duration-300"
         >
           <img
             src={Logo}
@@ -47,7 +47,7 @@ const Header = () => {
           <button
             data-collapse-toggle="mobile-menu-2"
             type="button"
-            className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden md:hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:md:hover:bg-gray-700 dark:focus:ring-gray-600"
             aria-controls="mobile-menu-2"
             aria-expanded="false"
             onClick={() => setToggleMenu(!toggleMenu)}
@@ -67,7 +67,7 @@ const Header = () => {
                   console.log(element.isActive),
                   (
                     <span
-                      className={`block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-gray-900 lg:p-0  lg:dark:hover:text-gray-50 dark:hover:bg-gray-700 dark:hover:text-gray-50 lg:dark:hover:bg-transparent dark:border-gray-700 lg:whitespace-nowrap ${
+                      className={`block py-2 pr-4 pl-3 border-b border-gray-100 md:hover:bg-gray-50 lg:md:hover:bg-transparent lg:border-0 lg:md:hover:text-gray-900 lg:p-0  lg:dark:md:hover:text-gray-50 dark:md:hover:bg-gray-700 dark:md:hover:text-gray-50 lg:dark:md:hover:bg-transparent dark:border-gray-700 lg:whitespace-nowrap ${
                         element.isActive
                           ? 'bg-gray-50 bg-transparent text-gray-900 dark:text-gray-50'
                           : 'text-gray-600 dark:text-gray-400'
@@ -85,7 +85,7 @@ const Header = () => {
                   console.log(element.isActive),
                   (
                     <span
-                      className={`block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-gray-900 lg:p-0  lg:dark:hover:text-gray-50 dark:hover:bg-gray-700 dark:hover:text-gray-50 lg:dark:hover:bg-transparent dark:border-gray-700 lg:whitespace-nowrap ${
+                      className={`block py-2 pr-4 pl-3 border-b border-gray-100 md:hover:bg-gray-50 lg:md:hover:bg-transparent lg:border-0 lg:md:hover:text-gray-900 lg:p-0  lg:dark:md:hover:text-gray-50 dark:md:hover:bg-gray-700 dark:md:hover:text-gray-50 lg:dark:md:hover:bg-transparent dark:border-gray-700 lg:whitespace-nowrap ${
                         element.isActive
                           ? 'bg-gray-50 bg-transparent text-gray-900 dark:text-gray-50'
                           : 'text-gray-600 dark:text-gray-400'
@@ -103,7 +103,7 @@ const Header = () => {
                   console.log(element.isActive),
                   (
                     <span
-                      className={`block py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-gray-900 lg:p-0  lg:dark:hover:text-gray-50 dark:hover:bg-gray-700 dark:hover:text-gray-50 lg:dark:hover:bg-transparent dark:border-gray-700 lg:whitespace-nowrap ${
+                      className={`block py-2 pr-4 pl-3 border-b border-gray-100 md:hover:bg-gray-50 lg:md:hover:bg-transparent lg:border-0 lg:md:hover:text-gray-900 lg:p-0  lg:dark:md:hover:text-gray-50 dark:md:hover:bg-gray-700 dark:md:hover:text-gray-50 lg:dark:md:hover:bg-transparent dark:border-gray-700 lg:whitespace-nowrap ${
                         element.isActive
                           ? 'bg-gray-50 bg-transparent text-gray-900 dark:text-gray-50'
                           : 'text-gray-600 dark:text-gray-400'

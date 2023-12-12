@@ -3,10 +3,10 @@ import React from 'react';
 const Button = ({ type, color, children, disabled, onClick }) => {
   const colorsClass =
     color === 'green'
-      ? `bg-green-700 hover:bg-green-800 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800`
+      ? `bg-green-700 md:hover:bg-green-800 focus:ring-green-300 dark:bg-green-600 dark:md:hover:bg-green-700 dark:focus:ring-green-800`
       : color === 'red'
-      ? `bg-red-700 hover:bg-red-800 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800`
-      : `bg-sky-700 hover:bg-sky-800 focus:ring-sky-300 dark:bg-sky-600 dark:hover:bg-sky-700   dark:focus:ring-sky-800`;
+      ? `bg-red-700 md:hover:bg-red-800 focus:ring-red-300 dark:bg-red-600 dark:md:hover:bg-red-700 dark:focus:ring-red-800`
+      : `bg-sky-700 md:hover:bg-sky-800 focus:ring-sky-300 dark:bg-sky-600 dark:md:hover:bg-sky-700   dark:focus:ring-sky-800`;
 
   return (
     <button
